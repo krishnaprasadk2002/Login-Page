@@ -1,0 +1,54 @@
+ <%-include('header.ejs')-%>
+ <style>
+body{
+
+
+  background-image: linear-gradient(to right, #3b2d2d, #4a323b, #523950, #4d4569, #345481);
+ 
+}
+ </style>
+
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong bg-dark" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
+                    <form action="/login" method="POST" class="text-light">
+      
+                  <h3 class="">LOG IN</h3>
+
+                  <% if (locals.log) { %>
+                    <span class="text-danger "> <%=log%> </span>
+                    <%}%>
+                 
+                  <% if(locals.logout){%>
+                    <div class="alter alert-success text-center">
+                     <%= logout %>
+                    </div>
+                    <%}%>
+      
+                  <div class="form-outline mb-4 mt-3 ">
+                    <label class="form-label " for="typeEmailX-2" >Email</label>
+                    <input type="email" name="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email" required/>
+                   
+                  </div>
+      
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="typePasswordX-2">Password</label>
+                    <input type="password" name="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password"  required />
+                    
+                  </div>
+      
+      
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+      
+      
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<%-include('footer.ejs')-%>
